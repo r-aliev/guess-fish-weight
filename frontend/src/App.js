@@ -1,30 +1,18 @@
-import React from 'react';
+import React from 'react'
 import './App.css';
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import { SnackbarProvider } from 'notistack';
 
-class App extends React.Component {
-
-  componentWillMount(){
-    this.fetchTasks()
-  }
-
-  fetchTasks(){
-    console.log("Fetching...")
-
-    fetch('http://127.0.0.1:8000/api/')
-    .then(response => response.json())
-    .then(data =>
-      console.log("Data:", data)
-      )
-  }
-
-  render() {
-    return(
+function App(){
+    return (
       <div>
-        <h1>Chess Boaccrd blyer!</h1>
+        <SnackbarProvider maxSnack={3}>
+          <Header />
+          <Home />
+        </SnackbarProvider>
       </div>
-    )
-  }
-
+    );
 }
 
 export default App;
