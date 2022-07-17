@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+import os
 
 
 class ApiConfig(AppConfig):
@@ -7,6 +8,7 @@ class ApiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'api'
 
-    path = 'api/weight-prediction.model'
+    CURRENT_DIR = os.path.dirname(__file__)
+    model_file = os.path.join(CURRENT_DIR, 'weight-prediction.model')
 
-    model = pickle.load(open(path, 'rb'))
+    model = pickle.load(open(model_file, 'rb'))
