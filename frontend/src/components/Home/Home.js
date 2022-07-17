@@ -49,7 +49,7 @@ const Home = () => {
         })
         .then((data) => {
           setResponse(JSON.parse(data.prediction));
-          enqueueSnackbar(`Prediction response is: ${response}`, {
+          enqueueSnackbar(`Prediction response is received`, {
             variant: "success",
           });
         })
