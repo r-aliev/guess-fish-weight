@@ -1,7 +1,5 @@
 Django==4.0
 djangorestframework==3.13.1
 pandas==1.4.3
-utils==1.0.1
-
 numpy==1.23.1
-pandas==1.4.3
+django-cors-headers==3.13.0
